@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  --page-background: #f5f6f2;
+  --surface: #ffffff;
+  --surface-muted: #f0f2ed;
+  --surface-hover: #eaf1eb;
+  --text-primary: #24342d;
+  --text-secondary: #68776e;
+  --border: #dce3dc;
+  --accent: #3f765f;
+  --accent-strong: #2f604a;
+  --accent-soft: #e6efe8;
+  --turquoise: #759586;
+  --turquoise-soft: #eaf0eb;
+  --violet: #bd8c4c;
+  --violet-soft: #f5efe4;
+  --button-background: #35694f;
+  --button-text: #ffffff;
+  --button-hover: #28563f;
+  --header-background: rgba(250, 251, 248, 0.96);
+  --shadow: 0 12px 32px rgba(37, 57, 44, 0.08);
+  --focus-ring: #759586;
+  --selection-text: #ffffff;
+  --selection-background: #3f765f;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page-background: #171d19;
+  --surface: #222b25;
+  --surface-muted: #28332c;
+  --surface-hover: #2d3d32;
+  --text-primary: #e8eee8;
+  --text-secondary: #aab8ad;
+  --border: #39473d;
+  --accent: #86b89a;
+  --accent-strong: #a5d1b4;
+  --accent-soft: #293d31;
+  --turquoise: #91a99a;
+  --turquoise-soft: #2c3930;
+  --violet: #d0a96f;
+  --violet-soft: #40382b;
+  --button-background: #79a98c;
+  --button-text: #142019;
+  --button-hover: #95c2a4;
+  --header-background: rgba(28, 36, 30, 0.96);
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+  --focus-ring: #91bba0;
+  --selection-text: #142019;
+  --selection-background: #86b89a;
+}
+
+body {
+  background-color: var(--page-background);
+  background-image: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent-soft) 32%, var(--page-background)),
+    var(--page-background) 22rem
+  );
+}
+
+main {
+  color: var(--text-primary);
+}
+
+input,
+select {
+  color: var(--text-primary);
+  background-color: var(--surface);
+}
+
+input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+.themeToggle span:first-child {
+  color: var(--turquoise);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+[role="alert"] {
+  margin: 0.75rem 0;
+  color: #b42318;
+}
+
+:root[data-theme="dark"] [role="alert"] {
+  color: #ff9a91;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
